@@ -3,6 +3,7 @@ from splinter import Browser
 import requests
 import re
 import pandas as pd
+import time
 
 # Create a funtion that returns the Soup object
 def create_soup(html):
@@ -19,6 +20,7 @@ def scrape():
     # Create browser object
     browser = init_browser()
     browser.visit(url)
+    time.sleep(2)
     # Create Soup object
     html = browser.html
     soup = create_soup(html)
